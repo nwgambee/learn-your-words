@@ -10,8 +10,12 @@ export class SearchForm extends Component {
      componentDidMount() {
 
      }
-     handleChange() {
-        
+     handleChange = e => {
+        this.setState({ [e.target.name]: e.target.value})
+     }
+     handleSubmit = (event) => {
+         event.preventDefault();
+        console.log(this.state)
      }
      render() {
         const { query } = this.state
@@ -21,10 +25,11 @@ export class SearchForm extends Component {
                     className='word-input'
                     type='text'
                     placeholder="Vocab Word"
-                    name="word"
+                    name="query"
                     value={query}
                     onChange={this.handleChange}
                     />
+                    <button className='submit-btn' onClick={() => this.handleSubmit()}>Find Vocab Word</button>
              </form>
          )
      }
