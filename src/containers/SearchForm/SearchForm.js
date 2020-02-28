@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { getVocabWord } from '../../actions/index'
 // import PropTypes from 'prop-types';
 import { searchVocabWord } from '../../apiCalls/apiCalls'
+import './SearchForm.scss'
 
 class SearchForm extends Component {
     constructor() {
