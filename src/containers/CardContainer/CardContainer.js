@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import VocabCard from '../VocabCard/VocabCard'
 
-const CardContainer = () => {
+const CardContainer = (wordDetails) => {
+    console.log(wordDetails)
     return (
         <section className='card-container'>
             <VocabCard />

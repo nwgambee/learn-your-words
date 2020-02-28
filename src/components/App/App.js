@@ -1,25 +1,20 @@
-import React, { Component } from 'react';
-import logo from '../../logo.svg';
+import React from 'react';
 import './App.css';
+import { connect } from 'react-redux';
 import SearchForm  from '../../containers/SearchForm/SearchForm.js'
 import CardContainer from '../../containers/CardContainer/CardContainer'
 
-export class App extends Component {
-  constructor() {
-    super();
-    this.state = {};
-  }
-  componentDidMount() {
-
-  }
-  render() {
+const App = (props) => {
     return(
       <main className='main'>
         <SearchForm />
-        <CardContainer />
+        <CardContainer wordDetails={props.searchedWordDetails}/>
       </main>
     )
   }
-}
 
-export default App;
+export const mapStateToProps = (state) => ({
+  searchedWordDetails: state.searchedWord
+})
+
+export default connect(mapStateToProps)(App)
