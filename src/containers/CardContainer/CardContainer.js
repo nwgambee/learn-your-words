@@ -2,13 +2,16 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import VocabCard from '../VocabCard/VocabCard'
 
-const CardContainer = (wordDetails) => {
-    console.log(wordDetails)
+const CardContainer = (props) => {
     return (
         <section className='card-container'>
-            <VocabCard />
+            <VocabCard wordDetails={props.searchedWordDetails}/>
         </section>
     )
 }
 
-export default CardContainer;
+export const mapStateToProps = (state) => ({
+    searchedWordDetails: state.searchedWord
+  })
+  
+export default connect(mapStateToProps)(CardContainer)
