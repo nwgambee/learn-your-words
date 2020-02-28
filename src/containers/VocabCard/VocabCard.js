@@ -9,7 +9,8 @@ const VocabCard = ({ wordDetails }) => {
         const definition = wordDetails.results[0].definition
         const partOfSpeech = wordDetails.results[0].partOfSpeech
         return (
-         <section className='vocab-card'>
+         <section className='vocab-card' id={`${word}-card`}>
+             <button className='add-to-list-btn'>+</button>
             <h1>{word}</h1>
             <h2> {definition} </h2>
             <h2> {partOfSpeech} </h2>
