@@ -17,6 +17,7 @@ class SearchForm extends Component {
          e.preventDefault();
          searchVocabWord(this.state.query)
             .then(data => this.props.getVocabWord(data)) 
+        this.setState({query:''});
      }
      render() {
         const { query } = this.state
