@@ -25,7 +25,7 @@ class SearchForm extends Component {
      render() {
         const { query } = this.state
          return(
-             <form className='search-word-form' onSubmit={this.handleSubmit}>
+             <form className='search-word-form' onSubmit={this.handleSubmit} autoComplete='off'>
                  <input 
                     className='word-input'
                     type='text'
