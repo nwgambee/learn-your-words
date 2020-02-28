@@ -6,6 +6,7 @@ import * as serviceWorker from './serviceWorker';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
+import { searchVocabWord } from './apiCalls/apiCalls.js'
 // import { rootReducer } from './reducers';
 
 ReactDOM.render(<App />, document.getElementById('root'));
@@ -14,3 +15,5 @@ ReactDOM.render(<App />, document.getElementById('root'));
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister();
+
+searchVocabWord('food');
