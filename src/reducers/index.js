@@ -2,7 +2,7 @@ import { combineReducers } from 'redux';
 import { vocabReducer } from './vocabReducer'
 
 const rootReducer = combineReducers({
-    words: vocabReducer
+    searchedWord: vocabReducer
   })
   
-  export default rootReducer;
+export default rootReducer;

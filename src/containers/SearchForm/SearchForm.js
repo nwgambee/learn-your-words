@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
-// import { connect } from 'react-redux';
+import { connect } from 'react-redux';
+import { getVocabWord } from '../../actions/index'
 // import PropTypes from 'prop-types';
+import { searchVocabWord } from '../../apiCalls/apiCalls'
 
-export class SearchForm extends Component {
+class SearchForm extends Component {
     constructor() {
         super();
         this.state = { query: ''};
@@ -13,14 +15,17 @@ export class SearchForm extends Component {
      handleChange = e => {
         this.setState({ [e.target.name]: e.target.value})
      }
-     handleSubmit = (event) => {
-         event.preventDefault();
-        console.log(this.state)
+     handleSubmit = async (e) => {
+         e.preventDefault();
+         searchVocabWord(this.state.query)
+            .then(data => this.props.getVocabWord(data))
+        
+         
      }
      render() {
         const { query } = this.state
          return(
-             <form className='search-word-form'>
+             <form className='search-word-form' onSubmit={this.handleSubmit}>
                  <input 
                     className='word-input'
                     type='text'
@@ -29,8 +34,14 @@ export class SearchForm extends Component {
                     value={query}
                     onChange={this.handleChange}
                     />
-                    <button className='submit-btn' onClick={() => this.handleSubmit()}>Find Vocab Word</button>
+                    <button className='submit-btn' >Find Vocab Word</button>
              </form>
          )
      }
 }
+
+export const mapDispatchToProps = dispatch => ({
+    getVocabWord: (query) => dispatch(getVocabWord(query))
+  })
+
+export default connect(null, mapDispatchToProps)(SearchForm);

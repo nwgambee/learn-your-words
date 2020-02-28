@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import logo from '../../logo.svg';
 import './App.css';
-import { SearchForm } from '../../containers/SearchForm/SearchForm.js'
+import SearchForm  from '../../containers/SearchForm/SearchForm.js'
 
 export class App extends Component {
   constructor() {
