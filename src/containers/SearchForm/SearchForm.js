@@ -9,18 +9,13 @@ class SearchForm extends Component {
         super();
         this.state = { query: ''};
      }
-     componentDidMount() {
-
-     }
      handleChange = e => {
         this.setState({ [e.target.name]: e.target.value})
      }
      handleSubmit = async (e) => {
          e.preventDefault();
          searchVocabWord(this.state.query)
-            .then(data => this.props.getVocabWord(data))
-        
-         
+            .then(data => this.props.getVocabWord(data)) 
      }
      render() {
         const { query } = this.state
