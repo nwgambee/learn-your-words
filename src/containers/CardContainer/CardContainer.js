@@ -11,7 +11,8 @@ const CardContainer = (props) => {
 }
 
 export const mapStateToProps = (state) => ({
-    searchedWordDetails: state.searchedWord
+    searchedWordDetails: state.searchedWord,
+    vocabList: state.vocabList
   })
   
 export default connect(mapStateToProps)(CardContainer)
