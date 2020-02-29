@@ -14,7 +14,10 @@ const App = () => {
               exact path='/'
               render={() => <SearchForm />}
             />
-        <CardContainer />
+        <Route
+              exact path='/'
+              render={() => <CardContainer />}
+            />
         <Route
               path='/vocab-list'
               render={() => <VocabList />}
