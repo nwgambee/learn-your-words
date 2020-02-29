@@ -7,7 +7,7 @@ class VocabCard extends Component {
         super();
      }
      addToList = () => {
-         // this is not working properly    
+         // this is not working properly, duplicates can still be added for some reason
          if (!this.props.vocabList.includes(this.props.wordDetails)) {
             this.props.addToVocabList(this.props.wordDetails)
          }
