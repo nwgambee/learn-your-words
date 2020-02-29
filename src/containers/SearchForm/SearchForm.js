@@ -16,7 +16,9 @@ class SearchForm extends Component {
      handleSubmit = async (e) => {
          e.preventDefault();
          searchVocabWord(this.state.query)
-            .then(data => this.props.getVocabWord(data)) 
+            .then(data => {
+                console.log(data);
+                this.props.getVocabWord(data)}) 
         this.setState({query:''});
      }
      render() {

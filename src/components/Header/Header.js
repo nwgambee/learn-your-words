@@ -6,9 +6,9 @@ import { Link } from 'react-router-dom';
 const Header = () => {
   return (
     <header className='header'>
-      <button className='home-btn'>Home</button>
-      <h1 className='main-title'>Learn Your Words</h1>
-      <Link className='vocab-list-btn' to={'/vocab-list'}>View Vocab List</Link>
+      <button className='home-btn'>~</button>
+      <Link to={'/'} className='main-title'>Learn Your Words</Link>
+      <Link className='vocab-list-btn' to={'/vocab-list'}>Vocab List</Link>
     </header>
   )
 }
