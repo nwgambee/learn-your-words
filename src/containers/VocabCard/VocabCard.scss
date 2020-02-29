@@ -1,8 +1,48 @@
 .vocab-card {
-  margin-top: 3rem;
+  margin-top: 2rem;
   padding: 1rem;
+  padding-top: 0;
   border-radius: 2rem;
   width: 30rem;
-  height: 20rem;
+  height: 35rem;
   background-color: blanchedalmond;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  box-shadow: 8px 8px 8px black;
+}
+
+.word-h1 {
+  text-align: center;
+  font-size: 4rem;
+  margin: 0;
+  border-bottom: 4px solid black;
+  padding-bottom: .3rem;
+}
+
+.add-to-list-btn {
+  margin-top: 1rem;
+  background-color: #F99D07;
+  padding: .75rem;
+  font-size: 1.5rem;
+  width: 20rem;
+  border: 5px solid #35D461;
+  border-radius: .5rem;
+  cursor: pointer;
+  font-weight: 700;
+  align-self: center;
+}
+
+.definition {
+  color: blueviolet;
+  text-align: center;
+  font-size: 2rem;
+  margin-top: 3rem  ;
+}
+
+.part-of-speech {
+  text-align: center;
+  font-size: 2rem;
+  margin: 0;
 }

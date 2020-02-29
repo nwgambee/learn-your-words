@@ -7,8 +7,6 @@ export const searchVocabWord = async (query) => {
 	}
 })
 .then(res => {
-	console.log(res);
-	
     if(!res.ok) {
       throw Error('Failed to retrieve vocab word.')
     }
