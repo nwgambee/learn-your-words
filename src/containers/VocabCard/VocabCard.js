@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { addToList } from '../../actions/index'
+import { addToList } from '../../actions/index';
+import './VocabCard.scss';
 
 class VocabCard extends Component {
     constructor() {

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import VocabCard from '../VocabCard/VocabCard'
+import './CardContainer.scss'
 
 const CardContainer = (props) => {
     return (
