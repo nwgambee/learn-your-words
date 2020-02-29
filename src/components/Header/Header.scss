@@ -9,12 +9,13 @@
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
+  border-bottom: 10px solid #35D461;
 }
 
 .home-btn {
   background-color: #F99D07;
   padding: .5rem;
-  font-size: 1.5rem;
+  font-size: 2rem;
   width: 10rem;
   border: 5px solid #35D461;
   border-radius: .5rem;
@@ -22,15 +23,17 @@
   text-align: center;
   cursor: pointer;
   font-weight: 700;
+}
 
- 
+.home-btn-svg {
 }
 
 .main-title {
   font-size: 4rem;
   color: #35D461;
+  border-top: 5px solid #F99D07;
   border-bottom: 5px solid #F99D07;
-  padding-bottom: .75rem;
+  padding: .75rem;
 }
 
 .vocab-list-btn {
@@ -39,7 +42,7 @@
   vertical-align: middle;
   text-align: center;
   border: 5px solid #35D461;
-  font-size: 1.3rem;
+  font-size: 2rem;
   padding: .5rem;
   width: 10rem;
   background-color: #F99D07;

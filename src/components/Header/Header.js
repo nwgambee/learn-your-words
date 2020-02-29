@@ -8,7 +8,7 @@ const Header = () => {
     <header className='header'>
       <button className='home-btn'>Home</button>
       <h1 className='main-title'>Learn Your Words</h1>
-      <Link className='vocab-list-btn' to={'/vocab-list'}>View Vocab List</Link>
+      <Link className='vocab-list-btn' to={'/vocab-list'}>Vocab List</Link>
     </header>
   )
 }
