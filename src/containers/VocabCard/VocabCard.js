@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { mapStateToProps } from '../CardContainer/CardContainer';
+import { addToList } from '../../actions/index'
 
 class VocabCard extends Component {
     constructor() {
         super();
      }
      addToList = () => {
-        console.log(this.props.wordDetails)
+         // this is not working properly    
+         if (!this.props.vocabList.includes(this.props.wordDetails)) {
+            this.props.addToVocabList(this.props.wordDetails)
+         }
     }
      render() {
         if (this.props.wordDetails) {
@@ -31,8 +34,12 @@ class VocabCard extends Component {
 
 }
 
-const mapDispatchToProps = dispatch => ({
-    
+export const mapDispatchToProps = dispatch => ({
+    addToVocabList: (word) => dispatch(addToList(word))
 })
 
-export default connect(null, mapDispatchToProps)(VocabCard);
+export const mapStateToProps = state => ({
+    vocabList: state.vocabList
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(VocabCard);
