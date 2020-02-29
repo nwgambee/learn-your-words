@@ -18,6 +18,7 @@ class VocabList extends Component {
    })
    return (
     <section className='list-container'>
+      <button className='practice-btn'>Practice!</button>
       {listCards}
     </section>
    )
