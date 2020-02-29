@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { getVocabWord } from '../../actions/index'
 // import PropTypes from 'prop-types';
 import { searchVocabWord } from '../../apiCalls/apiCalls'
+import './SearchForm.scss'
 
 class SearchForm extends Component {
     constructor() {
@@ -16,6 +17,7 @@ class SearchForm extends Component {
          e.preventDefault();
          searchVocabWord(this.state.query)
             .then(data => this.props.getVocabWord(data)) 
+        this.setState({query:''});
      }
      render() {
         const { query } = this.state
