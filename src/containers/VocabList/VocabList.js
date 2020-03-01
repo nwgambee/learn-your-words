@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './VocabList.scss'
+import { removeFromList } from '../../actions/index'
 
 
 class VocabList extends Component {
@@ -15,7 +16,7 @@ class VocabList extends Component {
               <h1 className='list-word-h1'>{word.word}</h1>
               <h2 className='list-definition'>{word.results[0].definition}</h2>
               <h2 className='list-part-of'>{word.results[0].partOfSpeech}</h2>
-              <button className='remove-from-list-btn'>Remove From List</button>
+              <button className='remove-from-list-btn' onClick={() => this.props.removeFromList(word.word)}>Remove From List</button>
             </section> 
 
    )
@@ -32,6 +33,10 @@ export const mapStateToProps = state => ({
   vocabList: state.vocabList
 })
 
+export const mapDispatchToProps = dispatch => ({
+  removeFromList: (id) => dispatch(removeFromList(id))
+})
 
 
-export default connect(mapStateToProps, null)(VocabList);
+
+export default connect(mapStateToProps, mapDispatchToProps)(VocabList);
