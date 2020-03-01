@@ -4,7 +4,7 @@ import { listReducer } from './listReducer';
 
 const rootReducer = combineReducers({
     searchedWord: vocabReducer,
-    vocabList: listReducer
+    vocabList: listReducer,
   })
   
 export default rootReducer;
