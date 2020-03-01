@@ -11,5 +11,4 @@ export const searchVocabWord = async (query) => {
       throw Error('Failed to retrieve vocab word.')
     }
     return res.json()})
-
 }
