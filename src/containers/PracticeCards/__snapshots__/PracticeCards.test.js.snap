@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PracticeCards should match the snapshot 1`] = `
+<section
+  className="list-container"
+>
+  <section
+    className="list-card"
+    key="word"
+  >
+    <h1
+      className="list-word-h1"
+    >
+      word
+    </h1>
+    <h2
+      className="list-definition"
+    >
+      definition
+    </h2>
+    <h2
+      className="list-part-of"
+    >
+      noun
+    </h2>
+    <button
+      className="remove-from-list-btn"
+      onClick={[Function]}
+    >
+      Remove From List
+    </button>
+  </section>
+</section>
+`;
