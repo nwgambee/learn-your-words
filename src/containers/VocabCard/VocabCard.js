@@ -7,16 +7,21 @@ import PropTypes from 'prop-types';
 export class VocabCard extends Component {
     constructor() {
         super();
-        this.state = {disabledButton: false}
+        // this.state = {disabled: false}
      }
      addToList = () => {
          if (!this.props.vocabList.includes(this.props.wordDetails)) {
             this.props.addToVocabList(this.props.wordDetails)
-            this.setState({disabledButton: true})
+            // this.setState({disabled: true})
          }
     }
-    enableButton = () => {
-        this.setState({disabledButton: false})
+    checkIfInVocabList = (currentWord) => {
+        let list = this.props.vocabList
+        for (var i = 0; i < list.length; i++) {
+            if (list[i].word === currentWord) {
+                return true;
+            } 
+        }
     }
      render() {
          if (this.props.wordDetails) {
@@ -28,7 +33,7 @@ export class VocabCard extends Component {
                 <h1 className='word-h1' >{word}</h1>
                 <h2 className='definition'> {definition} </h2>
                 <h2 className='part-of-speech'>{partOfSpeech} </h2>
-                 <button disabled={this.state.disabledButton} className='add-to-list-btn' onClick={() => this.addToList()}>Add To Vocab List</button>
+                 <button disabled={this.checkIfInVocabList(word)} onClick={() => this.addToList()} className={this.checkIfInVocabList(word) ? 'disabled add-to-list-btn' : 'add-to-list-btn'} >Add To Vocab List</button>
              </section>
             )
         } else {
