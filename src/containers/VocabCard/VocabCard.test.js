@@ -6,15 +6,23 @@ import { shallow } from 'enzyme';
 describe('VocabCard', () => {
   let wrapper;
   it('should match the snapshot', () => {
-    wrapper = shallow(<VocabCard />);
+    wrapper = shallow(<VocabCard vocabList={[{word: 'hat'}, {word: 'cat'}]}/>);
     expect(wrapper).toMatchSnapshot();
   })
   describe('Method Tests', () => {
     it('should call addToList when the add to vocab list button is clicked', () => {
-      wrapper = shallow(<VocabCard wordDetails={{word: 'word', results: [{definition: 'definition', partOfSpeech: 'noun'}]}} />);
+      wrapper = shallow(<VocabCard vocabList={[{word: 'hat'}, {word: 'cat'}]} wordDetails={{word: 'word', results: [{definition: 'definition', partOfSpeech: 'noun'}]}} />);
       wrapper.instance().addToList = jest.fn();
       wrapper.find('button').simulate('click');
       expect(wrapper.instance().addToList).toHaveBeenCalled();
+    })
+    it('should return true if the word exists in the vocabList', () => {
+      wrapper = shallow(<VocabCard vocabList={[{word: 'hat'}, {word: 'cat'}]} wordDetails={{word: 'word', results: [{definition: 'definition', partOfSpeech: 'noun'}]}} />);
+      expect(wrapper.instance().checkIfInVocabList('cat')).toEqual(true)
+    })
+    it('should return falsey if the word does not exist in the vocabList', () => {
+      wrapper = shallow(<VocabCard vocabList={[{word: 'hat'}, {word: 'cat'}]} wordDetails={{word: 'word', results: [{definition: 'definition', partOfSpeech: 'noun'}]}} />);
+      expect(wrapper.instance().checkIfInVocabList('yellow')).toEqual(undefined)
     })
   })
   describe('mapStateToProps', () => {
