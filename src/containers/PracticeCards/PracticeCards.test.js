@@ -15,12 +15,14 @@ describe('PracticeCards', () => {
       let unshuffled = [1,2,3,4]
       expect(wrapper.instance().shuffleList(unshuffled).length).toEqual(unshuffled.length)
     })
+
     it('should call checkGuess when the checkGuess button is clicked', () => {
       wrapper = shallow(<PracticeCards vocabList={[{word: 'word', results: [{definition: 'definition', partOfSpeech: 'noun'}, {}]}]}/>)
       wrapper.instance().checkGuess = jest.fn();
       wrapper.find('.check-guess').simulate('click');
       expect(wrapper.instance().checkGuess).toHaveBeenCalled()
     })
+
     it('should update state when a word is guessed correctly', () => {
       wrapper = shallow(<PracticeCards vocabList={[{word: 'word', results: [{definition: 'definition', partOfSpeech: 'noun'}, {}]}]}/>)
       const startState = {guess: 'hat', correctlyGuessedWords: []};
@@ -29,6 +31,7 @@ describe('PracticeCards', () => {
       wrapper.instance().checkGuess('hat');
       expect(wrapper.state()).toEqual(expected);
     })
+
     it('should update state when handleChange is called', () => {
       const startState = {guess: '', correctlyGuessedWords: []};
       wrapper = shallow(<PracticeCards vocabList={[{word: 'word', results: [{definition: 'definition', partOfSpeech: 'noun'}, {}]}]}/>)
@@ -37,6 +40,16 @@ describe('PracticeCards', () => {
       const expected = {guess: 'hat', correctlyGuessedWords: []};
       wrapper.instance().handleChange(mockEvent);
       expect(wrapper.state('guess')).toEqual(expected.guess);
+    })
+
+    it('should return hidden if vocabList is not empty', () => {
+      wrapper = shallow(<PracticeCards vocabList={[{word: 'word', results: [{definition: 'definition', partOfSpeech: 'noun'}, {}]}]}/>)
+      expect(wrapper.instance().checkContents()).toEqual('hidden')
+    })
+
+    it('should return visible if vocabList is empty', () => {
+      wrapper = shallow(<PracticeCards vocabList={[]}/>)
+      expect(wrapper.instance().checkContents()).toEqual('visible')
     })
   })
 

@@ -9,6 +9,13 @@ export class VocabList extends Component {
   constructor() {
     super();
  }
+ checkContents = () => {
+   if (this.props.vocabList.length > 0 ) {
+     return 'hidden';
+   } else {
+     return 'visible';
+   }
+ }
 
  render() {
    let listCards = this.props.vocabList.map(word => {
@@ -24,6 +31,7 @@ export class VocabList extends Component {
   })
    return (
     <section className='list-container'>
+      <h1 className={`${this.checkContents()} empty-message`}>Add some words to your vocab list to view them here!</h1>
       {listCards}
     </section>
    )
