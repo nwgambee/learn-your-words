@@ -14,6 +14,9 @@ export class PracticeCards extends Component {
  }
 
  shuffleList(array) {
+   if(this.state.guess !== 0 ){
+     return this.props.vocabList;
+   } else {
   var currentIndex = array.length, temporaryValue, randomIndex;
 
   while (0 !== currentIndex) {
@@ -26,6 +29,7 @@ export class PracticeCards extends Component {
     array[randomIndex] = temporaryValue;
   }
   return array;
+  }
 }
 checkGuess = (word) => {
   if(this.state.guess.toLowerCase() === word.toLowerCase()) {
