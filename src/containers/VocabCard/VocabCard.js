@@ -37,8 +37,6 @@ export class VocabCard extends Component {
             )
         }
      }
-     
-
 }
 
 export const mapDispatchToProps = dispatch => ({
