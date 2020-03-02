@@ -6,6 +6,7 @@ exports[`VocabList should match the snapshot 1`] = `
 >
   <section
     className="list-card"
+    key="word"
   >
     <h1
       className="list-word-h1"
