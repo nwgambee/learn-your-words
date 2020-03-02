@@ -49,3 +49,7 @@ export const mapStateToProps = state => ({
 })
 
 export default connect(mapStateToProps)(PracticeCards)
+
+PracticeCards.propTypes = {
+  vocabList: PropTypes.array
+}
