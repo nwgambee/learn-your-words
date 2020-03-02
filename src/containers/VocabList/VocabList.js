@@ -4,7 +4,7 @@ import './VocabList.scss'
 import { removeFromList } from '../../actions/index'
 
 
-class VocabList extends Component {
+export class VocabList extends Component {
   constructor() {
     super();
  }

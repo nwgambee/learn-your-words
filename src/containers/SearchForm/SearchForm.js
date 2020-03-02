@@ -5,7 +5,7 @@ import { getVocabWord } from '../../actions/index'
 import { searchVocabWord } from '../../apiCalls/apiCalls'
 import './SearchForm.scss'
 
-class SearchForm extends Component {
+export class SearchForm extends Component {
     constructor() {
         super();
         this.state = { query: '', error: ''};
@@ -31,7 +31,7 @@ class SearchForm extends Component {
      render() {
         const { query } = this.state
          return(
-             <form className='search-word-form' onSubmit={this.handleSubmit} autoComplete='off'>
+             <form className='search-word-form' onSubmit={(e) => this.handleSubmit(e)} autoComplete='off'>
                  <input 
                     className='word-input'
                     type='text'

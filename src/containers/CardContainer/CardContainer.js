@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import VocabCard from '../VocabCard/VocabCard'
 import './CardContainer.scss'
 
-const CardContainer = (props) => {
+ export const CardContainer = (props) => {
     return (
         <section className='card-container'>
             <VocabCard wordDetails={props.searchedWordDetails}/>

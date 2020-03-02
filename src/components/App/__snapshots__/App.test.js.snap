@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App should match the snapshot 1`] = `
+<main
+  className="main"
+>
+  <Header />
+  <Route
+    exact={true}
+    path="/"
+    render={[Function]}
+  />
+  <Route
+    exact={true}
+    path="/"
+    render={[Function]}
+  />
+  <Route
+    path="/vocab-list"
+    render={[Function]}
+  />
+</main>
+`;
