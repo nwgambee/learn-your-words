@@ -8,11 +8,20 @@ exports[`PracticeCards should match the snapshot 1`] = `
     className="list-card"
     key="word"
   >
-    <h1
-      className="list-word-h1"
+    <input
+      autoComplete="off"
+      className="list-word-input"
+      name="guess"
+      onChange={[Function]}
+      placeholder="Word"
+      type="text"
+    />
+    <button
+      className="check-guess"
+      onClick={[Function]}
     >
-      word
-    </h1>
+      Check Guess
+    </button>
     <h2
       className="list-definition"
     >
@@ -23,12 +32,6 @@ exports[`PracticeCards should match the snapshot 1`] = `
     >
       noun
     </h2>
-    <button
-      className="remove-from-list-btn"
-      onClick={[Function]}
-    >
-      Remove From List
-    </button>
   </section>
 </section>
 `;

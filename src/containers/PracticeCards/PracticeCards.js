@@ -27,7 +27,7 @@ export class PracticeCards extends Component {
   }
   return array;
 }
-checkGuess = (word, e) => {
+checkGuess = (word) => {
   if(this.state.guess.toLowerCase() === word.toLowerCase()) {
     this.setState({ guess: '', correctlyGuessedWords: [...this.state.correctlyGuessedWords, word.toLowerCase()]})
 
@@ -59,7 +59,7 @@ checkGuess = (word, e) => {
                onChange={this.handleChange}
                autoComplete='off'
               />
-              <button className='check-guess' onClick={(e) => this.checkGuess(word.word, e)}>Check Guess</button>
+              <button className='check-guess' onClick={() => this.checkGuess(word.word)}>Check Guess</button>
               <h2 className='list-definition'>{word.results[0].definition}</h2>
               <h2 className='list-part-of'>{word.results[0].partOfSpeech}</h2>
             </section> 
