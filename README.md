@@ -16,7 +16,7 @@ For our final solo project of Mod 3, we were tasked to pick an API and make an a
 
 
 ### Screenshots
-![home page](https://imgur.com/QHcvSYq)
+![home page](https://imgur.com/QHcvSYq.png)
 ![searched word](https://imgur.com/cSCLCc2)
 ![vocab list](https://imgur.com/ND4B0S5)
 ![practice page](https://imgur.com/c6TWR4v)
