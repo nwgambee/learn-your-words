@@ -7,12 +7,10 @@ import PropTypes from 'prop-types';
 export class VocabCard extends Component {
     constructor() {
         super();
-        // this.state = {disabled: false}
      }
      addToList = () => {
          if (!this.props.vocabList.includes(this.props.wordDetails)) {
             this.props.addToVocabList(this.props.wordDetails)
-            // this.setState({disabled: true})
          }
     }
     checkIfInVocabList = (currentWord) => {
