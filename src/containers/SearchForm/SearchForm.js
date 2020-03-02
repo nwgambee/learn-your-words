@@ -31,7 +31,7 @@ export class SearchForm extends Component {
      render() {
         const { query } = this.state
          return(
-             <form className='search-word-form' onSubmit={this.handleSubmit} autoComplete='off'>
+             <form className='search-word-form' onSubmit={(e) => this.handleSubmit(e)} autoComplete='off'>
                  <input 
                     className='word-input'
                     type='text'
