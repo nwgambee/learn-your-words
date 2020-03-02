@@ -3,11 +3,19 @@ import { addToList } from '../../actions/index'
 import { VocabCard, mapStateToProps, mapDispatchToProps } from './VocabCard';
 import { shallow } from 'enzyme';
 
-
 describe('VocabCard', () => {
+  let wrapper;
   it('should match the snapshot', () => {
-    let wrapper = shallow(<VocabCard />);
+    wrapper = shallow(<VocabCard />);
     expect(wrapper).toMatchSnapshot();
+  })
+  describe('Method Tests', () => {
+    it('should call addToList when the add to vocab list button is clicked', () => {
+      wrapper = shallow(<VocabCard wordDetails={{word: 'word', results: [{definition: 'definition', partOfSpeech: 'noun'}]}} />);
+      wrapper.instance().addToList = jest.fn();
+      wrapper.find('button').simulate('click');
+      expect(wrapper.instance().addToList).toHaveBeenCalled();
+    })
   })
   describe('mapStateToProps', () => {
     it('should return an object with the vocabList array', () => {
