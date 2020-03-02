@@ -24,6 +24,9 @@ export class PracticeCards extends Component {
 }
 
  render() {
+   // render these cards with an input to replace .list-word-h1. Add a button to check answer. 
+  //  When that is clicked, run helper function to check if the typed word matches the underlying word (maybe use id property of word.word and check against that).
+  // if check is successful, uncover h1 to reveal correct answer. Prompt 'incorrect guess' message otherwise
    let shuffledList = this.shuffleList(this.props.vocabList);
    let cards = shuffledList.map(word => {
     return (
