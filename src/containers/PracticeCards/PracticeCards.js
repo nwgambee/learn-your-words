@@ -43,7 +43,8 @@ checkGuess = (word, e) => {
       if(this.state.correctlyGuessedWords.includes(word.word.toLowerCase())) {
         return (
           <section className='list-card' key={word.word}>
-            <h1 className='list-word-input'> {word.word}</h1>
+            <h2 className='correct-message'>Good job!</h2>
+            <h1 className='list-word-h1'> {word.word}</h1>
             <h2 className='list-definition'>{word.results[0].definition}</h2>
             <h2 className='list-part-of'>{word.results[0].partOfSpeech}</h2>
           </section> 
@@ -56,6 +57,7 @@ checkGuess = (word, e) => {
                placeholder='Word'
                name={`guess`}
                onChange={this.handleChange}
+               autoComplete='off'
               />
               <button className='check-guess' onClick={(e) => this.checkGuess(word.word, e)}>Check Guess</button>
               <h2 className='list-definition'>{word.results[0].definition}</h2>
