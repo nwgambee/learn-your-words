@@ -40,6 +40,13 @@ checkGuess = (word) => {
     // prompt 'incorrect guess' message
   }
 }
+  checkContents = () => {
+    if (this.props.vocabList.length > 0 ) {
+      return 'hidden';
+    } else {
+      return 'visible';
+    }
+  }
 
  render() {
     let shuffledList = this.shuffleList(this.props.vocabList);
@@ -73,6 +80,7 @@ checkGuess = (word) => {
 
    return (
      <section className='list-container'>
+       <h1 className={`${this.checkContents()} empty-message`}>Add some words to your vocab list to practice them!</h1>
        {cards}
      </section>
    )
