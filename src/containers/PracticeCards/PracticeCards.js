@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 export class PracticeCards extends Component {
   constructor() {
     super();
-    this.state = {guess: ''}
+    this.state = {guess: '', correctlyGuessedWords: []}
  }
 
  handleChange = e => {
@@ -31,6 +31,8 @@ checkGuess = (word, e) => {
   if(this.state.guess.toLowerCase() === word.toLowerCase()) {
     console.log('correct guess!')
     // replace input with word and remove check guess button
+    this.setState({ guess: '', correctlyGuessedWords: [...this.state.correctlyGuessedWords, word.toLowerCase()]})
+
   } else {
     console.log('incorrect guess');
     // prompt 'incorrect guess' message
@@ -45,6 +47,18 @@ checkGuess = (word, e) => {
   // if check is successful, uncover h1 to reveal correct answer. Prompt 'incorrect guess' message otherwise
     let shuffledList = this.shuffleList(this.props.vocabList);
     let cards = shuffledList.map(word => {
+      if(this.state.correctlyGuessedWords.includes(word.word.toLowerCase())) {
+        return (
+          <section className='list-card' key={word.word}>
+            <h1 className='list-word-input'> {word.word}</h1>
+            {/* <button className='check-guess' onClick={(e) => this.checkGuess(word.word, e)}>Check Guess</button> */}
+            <h2 className='list-definition'>{word.results[0].definition}</h2>
+            <h2 className='list-part-of'>{word.results[0].partOfSpeech}</h2>
+            {/* <button className='remove-from-list-btn' onClick={() => this.props.removeFromList(word.word)}>Remove From List</button> */}
+          </section> 
+
+        )  
+      } 
      return (
             <section className='list-card' key={word.word}>
               <input className='list-word-input'
