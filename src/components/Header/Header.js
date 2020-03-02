@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 const Header = () => {
   return (
     <header className='header'>
-      <button className='practice-btn'>Practice!</button>
+      <Link to={'/practice'} className='practice-btn'>Practice!</Link>
       <Link to={'/'} className='main-title'>Learn Your Words</Link>
       <Link className='vocab-list-btn' to={'/vocab-list'}>Vocab List</Link>
     </header>

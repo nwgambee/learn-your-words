@@ -19,5 +19,9 @@ exports[`App should match the snapshot 1`] = `
     path="/vocab-list"
     render={[Function]}
   />
+  <Route
+    path="/practice"
+    render={[Function]}
+  />
 </main>
 `;

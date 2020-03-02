@@ -4,11 +4,12 @@ exports[`Header should match the snapshot 1`] = `
 <header
   className="header"
 >
-  <button
+  <Link
     className="practice-btn"
+    to="/practice"
   >
     Practice!
-  </button>
+  </Link>
   <Link
     className="main-title"
     to="/"
