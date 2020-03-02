@@ -5,6 +5,7 @@ import SearchForm  from '../../containers/SearchForm/SearchForm.js'
 import CardContainer from '../../containers/CardContainer/CardContainer'
 import Header from '../Header/Header'
 import VocabList from '../../containers/VocabList/VocabList'
+import PracticeCards from '../../containers/PracticeCards/PracticeCards'
 
 const App = () => {
     return(
@@ -21,6 +22,10 @@ const App = () => {
         <Route
               path='/vocab-list'
               render={() => <VocabList />}
+            />
+        <Route
+              path='/practice'
+              render={() => <PracticeCards />}
             />
       </main>
     )
