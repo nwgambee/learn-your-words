@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import './VocabList.scss'
+import { removeFromList } from '../../actions/index'
 
 
 class VocabList extends Component {
@@ -9,16 +11,18 @@ class VocabList extends Component {
 
  render() {
    let listCards = this.props.vocabList.map(word => {
-     return <section className='list-card'>
-              <button className='remove-from-list-btn'>-</button>
-              <h1>{word.word}</h1>
-              <h3>{word.results[0].definition}</h3>
-              <h3>{word.results[0].partOfSpeech}</h3>
-            </section>
-   })
+     return (
+            <section className='list-card'>
+              <h1 className='list-word-h1'>{word.word}</h1>
+              <h2 className='list-definition'>{word.results[0].definition}</h2>
+              <h2 className='list-part-of'>{word.results[0].partOfSpeech}</h2>
+              <button className='remove-from-list-btn' onClick={() => this.props.removeFromList(word.word)}>Remove From List</button>
+            </section> 
+
+   )
+  })
    return (
     <section className='list-container'>
-      <button className='practice-btn'>Practice!</button>
       {listCards}
     </section>
    )
@@ -29,6 +33,10 @@ export const mapStateToProps = state => ({
   vocabList: state.vocabList
 })
 
+export const mapDispatchToProps = dispatch => ({
+  removeFromList: (id) => dispatch(removeFromList(id))
+})
 
 
-export default connect(mapStateToProps, null)(VocabList);
+
+export default connect(mapStateToProps, mapDispatchToProps)(VocabList);
