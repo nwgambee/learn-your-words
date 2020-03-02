@@ -10,4 +10,14 @@ describe('actions', () => {
     const result = actions.getVocabWord(query)
     expect(result).toEqual(expectedAction)
   })
+
+  it('should have a type of ADD_TO_LIST', () => {
+    const word = 'hat'
+    const expectedAction = {
+      type: 'ADD_TO_LIST',
+      word
+    }
+    const result = actions.addToList(word)
+    expect(result).toEqual(expectedAction)
+  })
 })
