@@ -4,6 +4,11 @@ exports[`PracticeCards should match the snapshot 1`] = `
 <section
   className="list-container"
 >
+  <h1
+    className="hidden empty-message"
+  >
+    Add some words to your vocab list to practice them!
+  </h1>
   <section
     className="list-card"
     key="word"

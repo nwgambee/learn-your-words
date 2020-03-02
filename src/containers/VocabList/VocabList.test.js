@@ -4,6 +4,7 @@ import { VocabList, mapStateToProps, mapDispatchToProps } from './VocabList';
 import { shallow } from 'enzyme';
 
 describe('VocabList', () => {
+  let wrapper;
   it('should match the snapshot', () => {
     let wrapper = shallow(<VocabList vocabList=
       {
@@ -17,6 +18,16 @@ describe('VocabList', () => {
       }
     />);
     expect(wrapper).toMatchSnapshot();
+  })
+  describe('Method Tests', () => {
+    it('should return hidden if vocabList is not empty', () => {
+      wrapper = shallow(<VocabList vocabList={[{word: 'word', results: [{definition: 'definition', partOfSpeech: 'noun'}, {}]}]}/>)
+      expect(wrapper.instance().checkContents()).toEqual('hidden')
+    })
+    it('should return visible if vocabList is empty', () => {
+      wrapper = shallow(<VocabList vocabList={[]}/>)
+      expect(wrapper.instance().checkContents()).toEqual('visible')
+    })
   })
   describe('mapStateToProps', () => {
     it('should return an object with the vocabList array', () => {
