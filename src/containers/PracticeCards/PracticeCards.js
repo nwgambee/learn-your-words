@@ -14,7 +14,7 @@ export class PracticeCards extends Component {
  }
 
  shuffleList(array) {
-   if(this.state.guess !== 0 ){
+   if(this.state.guess !== '' ){
      return this.props.vocabList;
    } else {
   var currentIndex = array.length, temporaryValue, randomIndex;
