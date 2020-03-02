@@ -34,6 +34,10 @@
   align-self: center;
 }
 
+.disabled {
+  cursor: not-allowed;
+}
+
 .definition {
   color: blueviolet;
   text-align: center;
