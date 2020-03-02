@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { addToList } from '../../actions/index';
 import './VocabCard.scss';
+import PropTypes from 'prop-types';
+
 
 export class VocabCard extends Component {
     constructor() {
@@ -46,3 +48,8 @@ export const mapStateToProps = state => ({
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(VocabCard);
+
+VocabCard.propTypes = {
+    addToVocabList: PropTypes.func,
+    vocabList: PropTypes.array
+}

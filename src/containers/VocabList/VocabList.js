@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './VocabList.scss'
 import { removeFromList } from '../../actions/index'
+import PropTypes from 'prop-types';
 
 
 export class VocabList extends Component {
@@ -12,7 +13,7 @@ export class VocabList extends Component {
  render() {
    let listCards = this.props.vocabList.map(word => {
      return (
-            <section className='list-card'>
+            <section className='list-card' key={word.word}>
               <h1 className='list-word-h1'>{word.word}</h1>
               <h2 className='list-definition'>{word.results[0].definition}</h2>
               <h2 className='list-part-of'>{word.results[0].partOfSpeech}</h2>
@@ -40,3 +41,8 @@ export const mapDispatchToProps = dispatch => ({
 
 
 export default connect(mapStateToProps, mapDispatchToProps)(VocabList);
+
+VocabList.propTypes = {
+  vocabList: PropTypes.array,
+  removeFromList: PropTypes.func
+}

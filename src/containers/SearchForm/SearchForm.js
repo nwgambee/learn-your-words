@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getVocabWord } from '../../actions/index'
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import { searchVocabWord } from '../../apiCalls/apiCalls'
 import './SearchForm.scss'
 
@@ -52,3 +52,7 @@ export const mapDispatchToProps = dispatch => ({
   })
 
 export default connect(null, mapDispatchToProps)(SearchForm);
+
+SearchForm.propTypes = {
+    getVocabWord: PropTypes.func
+}

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import VocabCard from '../VocabCard/VocabCard'
 import './CardContainer.scss'
+import PropTypes from 'prop-types'
 
  export const CardContainer = (props) => {
     return (
@@ -17,3 +18,8 @@ export const mapStateToProps = (state) => ({
   })
   
 export default connect(mapStateToProps)(CardContainer)
+
+CardContainer.propTypes = {
+    // searchedWordDetails: PropTypes.object,
+    vocabList: PropTypes.array
+}
