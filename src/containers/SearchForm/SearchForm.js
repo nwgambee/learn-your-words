@@ -5,7 +5,7 @@ import { getVocabWord } from '../../actions/index'
 import { searchVocabWord } from '../../apiCalls/apiCalls'
 import './SearchForm.scss'
 
-class SearchForm extends Component {
+export class SearchForm extends Component {
     constructor() {
         super();
         this.state = { query: '', error: ''};

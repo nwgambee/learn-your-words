@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { addToList } from '../../actions/index';
 import './VocabCard.scss';
 
-class VocabCard extends Component {
+export class VocabCard extends Component {
     constructor() {
         super();
      }

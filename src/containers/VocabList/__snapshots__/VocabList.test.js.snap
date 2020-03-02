@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`VocabList should match the snapshot 1`] = `
+<section
+  className="list-container"
+>
+  <section
+    className="list-card"
+  >
+    <h1
+      className="list-word-h1"
+    >
+      word
+    </h1>
+    <h2
+      className="list-definition"
+    >
+      this is a def
+    </h2>
+    <h2
+      className="list-part-of"
+    >
+      noun
+    </h2>
+    <button
+      className="remove-from-list-btn"
+      onClick={[Function]}
+    >
+      Remove From List
+    </button>
+  </section>
+</section>
+`;
