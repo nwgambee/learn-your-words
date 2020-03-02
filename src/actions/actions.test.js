@@ -20,4 +20,14 @@ describe('actions', () => {
     const result = actions.addToList(word)
     expect(result).toEqual(expectedAction)
   })
+
+  it('should have a type of REMOVE_FROM_LIST', () => {
+    const id = 'hat'
+    const expectedAction = {
+      type: 'REMOVE_FROM_LIST',
+      id
+    }
+    const result = actions.removeFromList(id)
+    expect(result).toEqual(expectedAction)
+  })
 })
