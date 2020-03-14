@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 export class PracticeCards extends Component {
   constructor() {
     super();
-    this.state = {guess: '', correctlyGuessedWords: []}
+    this.state = {guess: '', correctlyGuessedWords: [], incorrectlyGuessedWords: []}
  }
 
  handleChange = e => {
@@ -37,7 +37,8 @@ checkGuess = (word) => {
 
   } else {
     console.log('incorrect guess');
-    // prompt 'incorrect guess' message
+    this.setState({ guess: '', correctlyGuessedWords: [...this.state.correctlyGuessedWords], incorrectlyGuessedWords: [...this.state.incorrectlyGuessedWords, word.toLowerCase()]})
+    console.log(this.state)
   }
 }
   checkContents = () => {
@@ -60,7 +61,24 @@ checkGuess = (word) => {
             <h2 className='list-part-of'>{word.results[0].partOfSpeech}</h2>
           </section> 
         )  
-      } 
+      } else if (this.state.incorrectlyGuessedWords.includes(word.word.toLowerCase())) {
+        return (
+          <section className='list-card' key={word.word}>
+            <h2>Incorrect, guess again!</h2>
+            <input className='list-word-input'
+             type='text'
+             placeholder='Word'
+             name={`guess`}
+             onChange={this.handleChange}
+             autoComplete='off'
+            />
+            <button className='check-guess' onClick={() => this.checkGuess(word.word)}>Check Guess</button>
+            <h2 className='list-definition'>{word.results[0].definition}</h2>
+            <h2 className='list-part-of'>{word.results[0].partOfSpeech}</h2>
+          </section> 
+
+  )
+      }
      return (
             <section className='list-card' key={word.word}>
               <input className='list-word-input'
