@@ -76,7 +76,6 @@ checkGuess = (word) => {
             <h2 className='list-definition'>{word.results[0].definition}</h2>
             <h2 className='list-part-of'>{word.results[0].partOfSpeech}</h2>
           </section> 
-
   )
       }
      return (
